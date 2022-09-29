@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 BigDecimal value = new BigDecimal(temp);
                 BigDecimal tip_num = new BigDecimal(tip_percentage);
                 BigDecimal result = value.multiply(tip_num);
-                tip.setText("$" + result.toString());
-                total.setText("$" + value.add(result).toString());
+                tip.setText("$" + String.format("%.02f",result));
+                total.setText("$" + String.format("%.02f",value.add(result)));
             } catch (Exception ignored) {}
         }
     }
